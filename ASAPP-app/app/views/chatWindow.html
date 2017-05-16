@@ -1,0 +1,36 @@
+<div class="chatWindow">
+    <div class="messageWindow">
+        <div id="chatBox" class="messages" scroll-bottom="messages">
+            <span ng-repeat="message in messages">
+                <span ng-show="!message.notification">
+                <!-- <p class="username" ng-show="!messageIsMine(message.userId)">{{message.username}}</p> -->
+                    <div ng-class='getBubbleClass(message.userId)'>
+                        <div class="messageFrom" ng-class='getBubbleClassFrom(message.userId)'>
+                            <p ng-bind="message.username"></p>
+                        </div>
+                        <div class="messageText" ng-class='getBubbleClassText(message.userId)'>
+                            <p ng-bind="message.message"></p>
+                        </div>
+                        <div class="messageTime" ng-class='getBubbleClassTime(message.userId)'>
+                            <p ng-bind="getTimeStr(message.time)"></p>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </span>
+            <!-- <span ng-show="message.notification">
+                    <p class="notification" ng-bind="message.message"></p>
+                </span> -->
+            <div class="messageDay" ng-show="message.notification">
+                <p ng-bind="message.message"></p>
+            </div>
+            </span>
+        </div>
+    </div>
+    <div class="chatFooter">
+        <ul id="messages"></ul>
+        <form action="">
+            <input id="msg-input" ng-change="updateTyping()" ng-model="data.message" autocomplete="off" placeholder="Message" />
+            <button ng-click="sendMessage(data.message, chatRoomId)" ng-disabled="!data.message || data.message === ''">Send</button>
+        </form>
+    </div>
+</div>

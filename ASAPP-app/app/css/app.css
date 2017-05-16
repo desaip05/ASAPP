@@ -1,0 +1,27 @@
+/* app css stylesheet */
+
+html,
+body {
+    /*font-family: 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
+    font: 13px Helvetica, Arial;
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.widgetWindow {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 296px;
+    height: 350px;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+*:focus {
+    outline: none;
+}
